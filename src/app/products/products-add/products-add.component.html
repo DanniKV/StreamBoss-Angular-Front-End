@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Description:
+    <input type="text" formControlName="description">
+  </label>
+
+  <label>
+    Price:
+    <input type="number" formControlName="price">
+  </label>
+
+  <label>
+    Category:
+    <input type="text" formControlName="category">
+  </label>
+
+  <label>
+    Stock:
+    <input type="number" formControlName="stock">
+  </label>
+
+  <label>
+    PicUrl:
+    <input type="text" formControlName="picUrl">
+  </label>
+
+
+  <button mat-raised-button color="primary" type="submit">SaveProduct</button>
+</form>
