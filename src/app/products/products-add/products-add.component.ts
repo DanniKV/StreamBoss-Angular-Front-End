@@ -4,11 +4,11 @@ import {Router} from '@angular/router';
 import {ProductService} from '../../shared/services/product.service';
 
 @Component({
-  selector: 'app-product-add',
-  templateUrl: './product-add.component.html',
-  styleUrls: ['./product-add.component.css']
+  selector: 'app-products-add',
+  templateUrl: './products-add.component.html',
+  styleUrls: ['./products-add.component.css']
 })
-export class ProductAddComponent implements OnInit {
+export class ProductsAddComponent implements OnInit {
   productForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
