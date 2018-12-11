@@ -6,7 +6,7 @@ import {ProductService} from '../../shared/services/product.service';
 @Component({
   selector: 'app-products-add',
   templateUrl: './products-add.component.html',
-  styleUrls: ['./products-add.component.css']
+  styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class ProductsAddComponent implements OnInit {
   productForm = new FormGroup({
@@ -23,6 +23,7 @@ export class ProductsAddComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   addProduct() {

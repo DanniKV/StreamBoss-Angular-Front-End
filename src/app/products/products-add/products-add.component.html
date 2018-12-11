@@ -1,6 +1,8 @@
-<h4>PRODUCT ADD!</h4>
+<h2>Admin Page</h2>
 <form [formGroup]="productForm" (ngSubmit)="addProduct()">
-
+  <div class="container">
+    <div class="jumbotron">
+      <p>Add a product:</p>
   <label>
     Name:
     <input type="text" formControlName="name">
@@ -32,5 +34,15 @@
   </label>
 
 
-  <button mat-raised-button color="primary" type="submit">SaveProduct</button>
+
+  <!-- lower buttons -->
+  <br>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-dark">Reset</button>
+    </div>
+  </div>
+    </div>
+  </div>
 </form>

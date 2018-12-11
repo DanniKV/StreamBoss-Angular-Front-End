@@ -6,7 +6,7 @@ import {ProductService} from '../../shared/services/product.service';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.component.html',
-  styleUrls: ['./products-details.component.css']
+  styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class ProductsDetailsComponent implements OnInit {
   product: Product;

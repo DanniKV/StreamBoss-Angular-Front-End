@@ -7,7 +7,7 @@ import {ProductService} from '../../shared/services/product.service';
 @Component({
   selector: 'app-products-update',
   templateUrl: './products-update.component.html',
-  styleUrls: ['./products-update.component.css']
+  styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class ProductsUpdateComponent implements OnInit {
   id: number;
