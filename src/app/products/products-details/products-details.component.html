@@ -1,1 +1,11 @@
-<h4>PRODUCT DETAILS!</h4>
+<button routerLink="/products">Back</button>
+<h1>Product Details!</h1>
+
+<div *ngIf="product">
+  <h3>Product ID: {{product.id}}</h3>
+  <h3>Product Name: {{product.name}} {{product.description}}</h3>
+</div>
+
+<div *ngIf="!product">
+  <h2> Product Not Found!</h2>
+</div>

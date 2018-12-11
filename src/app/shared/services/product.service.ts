@@ -18,11 +18,10 @@ export class ProductService {
   //Crud Operations!
 
   addProduct(product: Product): Observable<Product> {
-    debugger;
     return this.http.post<Product>(this.apiUrl, product);
   }
   getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(this.apiUrl + id);
+    return this.http.get<Product>(this.apiUrl + "/" + id);
   }
 
   getProducts(): Observable<Product[]> {
@@ -30,10 +29,10 @@ export class ProductService {
   }
 
   updateProduct(product: Product): Observable<Product> {
-    return this.http.put<Product>(this.apiUrl  + product.id, product);
+    return this.http.put<Product>(this.apiUrl + "/" + product.id, product);
   }
 
   deleteProduct(id: number): Observable<any> {
-    return this.http.delete(this.apiUrl + id);
+    return this.http.delete(this.apiUrl + "/" + id);
   }
 }

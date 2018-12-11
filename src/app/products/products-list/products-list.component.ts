@@ -9,13 +9,13 @@ import {Router} from '@angular/router';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent implements OnInit {
-  product: Product[];
+  products: Product[];
 
   constructor(private productService: ProductService,
               private router: Router) { }
 
   ngOnInit() {
-
+  this.refresh()
   }
 
   delete(id: number) {
@@ -28,7 +28,7 @@ export class ProductsListComponent implements OnInit {
   refresh() {
     this.productService.getProducts()
       .subscribe(listOfProducts => {
-        this.product = listOfProducts;
+        this.products = listOfProducts;
       });
   }
 }
