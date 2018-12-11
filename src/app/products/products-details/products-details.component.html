@@ -1,11 +1,46 @@
-<button routerLink="/products">Back</button>
+<button routerLink="/products" xmlns="http://www.w3.org/1999/html">Back</button>
 <h1>Product Details!</h1>
 
 <div *ngIf="product">
   <h3>Product ID: {{product.id}}</h3>
-  <h3>Product Name: {{product.name}} {{product.description}}</h3>
 </div>
 
 <div *ngIf="!product">
   <h2> Product Not Found!</h2>
 </div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2><b>{{product.name}}</b></h2>
+    <div class="row">
+      <img src="/src/app/images/600X300.gif" width="600" height="300" alt=""/>
+      <div class="col-md-5 pb-1 pb-md-0">
+        <h3><b>{{product.price}},-</b></h3>
+        <button type="submit" class="btn btn-primary">Læg i indkøbsvognen</button>
+        <h6 style="color: green">på lager: {{product.stock}}</h6>
+      </div>
+    </div>
+    <br>
+    <p> Produkt Information: {{product.description}}</p>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-12" id="contact">
+      <h3>Kontakt os</h3>
+      <p><b>StreamBoss.dk</b> <br>
+        Kronprinsensgade 75 <br>
+        6700 Esbjerg <br>
+        Email: info@streamboss.dk <br>
+        Tlf: (+45) 23257210 </p>
+    </div>
+    <div class="col-md-6 col-12">
+      <h3>Information</h3>
+      <p>Om StreamBoss.dk<br>
+        <a href="">FAQ</a> <br>
+        <a href="">Handelsbetingelser</a> </p>
+    </div>
+  </div>
+</div>
+<hr>

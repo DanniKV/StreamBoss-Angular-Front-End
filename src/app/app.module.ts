@@ -10,6 +10,7 @@ import {ProductsListComponent} from './products/products-list/products-list.comp
 import {ProductsAddComponent} from './products/products-add/products-add.component';
 import {ProductsDetailsComponent} from './products/products-details/products-details.component';
 import {ProductsUpdateComponent} from './products/products-update/products-update.component';
+import {FooterComponent} from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ProductsUpdateComponent} from './products/products-update/products-updat
     ProductsListComponent,
     ProductsAddComponent,
     ProductsDetailsComponent,
-    ProductsUpdateComponent
+    ProductsUpdateComponent,
+    FooterComponent
 
 
   ],
