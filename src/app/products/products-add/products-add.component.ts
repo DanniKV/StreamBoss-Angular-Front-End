@@ -18,6 +18,7 @@ export class ProductsAddComponent implements OnInit {
     picUrl: new FormControl('')
   });
 
+
   constructor(private productService: ProductService,
               private router: Router) {
   }
