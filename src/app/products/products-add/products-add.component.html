@@ -3,7 +3,7 @@
 
   <div class="container">
     <div class="jumbotron">
-      <p>Add a product:</p>
+      <p>Tilføj produkt:</p>
 
       <!-- FormGroup -->
   <div class="form-group row">
@@ -13,6 +13,34 @@
   </label>
   </div>
 
+      <!-- Category  Options! -->
+      <div class="form-group row">
+        <label for="productType" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-10">
+          <div class="form-group">
+            <select class="form-control" id="productType">
+              <optgroup label="Webshop">
+                <option value="headset">Headset</option>
+                <option value="capturecard">Capture Card</option>
+                <option value="microphone">Mikrofon</option>
+                <option value="gamerchair">Gamerstol</option>
+                <option value="webcam">Webcam</option>
+                <option value="greenscreen">Greenscreen</option>
+              </optgroup>
+              <optgroup label="Grafik">
+                <option value="overlay">Overlay</option>
+                <option value="banner">Banner</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
       <div class="form-group row">
   <label  class="col-sm-2 col-form-label">
     Description:
@@ -20,6 +48,11 @@
   </label>
       </div>
 
+      <!-- WholeSale,VAT, retail -->
+
+
+
+      <!-- Labels -->
       <div class="form-group row">
   <label class="col-sm-2 col-form-label">
     Price:
@@ -27,13 +60,6 @@
   </label>
       </div>
 
-        <!-- Category -->
-      <div class="form-group row">
-  <label  class="col-sm-2 col-form-label">
-    Category:
-    <input type="text" formControlName="category">
-  </label>
-      </div>
 
       <div class="form-group row">
   <label  class="col-sm-2 col-form-label">
@@ -51,7 +77,7 @@
 
   <!-- buttons -->
   <br>
-  <div class="form-group row">
+  <div class="form-group row" >
     <div class="col-sm-10">
       <button type="submit" class="btn btn-primary">Submit</button>
       <button type="reset" class="btn btn-dark">Reset</button>

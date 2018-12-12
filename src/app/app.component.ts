@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./shared/css/StreamBossCSS.css']
 })
 export class AppComponent {
-  title = 'StreamBoss-Angular';
 }
