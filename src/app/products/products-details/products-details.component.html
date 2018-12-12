@@ -1,8 +1,6 @@
 <button routerLink="/products" xmlns="http://www.w3.org/1999/html">Back</button>
-<h1>Product Details!</h1>
 
 <div *ngIf="product">
-  <h3>Product ID: {{product.id}}</h3>
 </div>
 
 <div *ngIf="!product">
@@ -13,7 +11,7 @@
   <div class="jumbotron">
     <h2><b>{{product.name}}</b></h2>
     <div class="row">
-      <img src="/src/app/images/600X300.gif" width="600" height="300" alt=""/>
+      <img src="../../../assets/images/600X300.gif" width="600" height="300" alt=""/>
       <div class="col-md-5 pb-1 pb-md-0">
         <h3><b>{{product.price}},-</b></h3>
         <button type="submit" class="btn btn-primary">Læg i indkøbsvognen</button>

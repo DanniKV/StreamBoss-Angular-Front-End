@@ -1,41 +1,55 @@
 <h2>Admin Page</h2>
 <form [formGroup]="productForm" (ngSubmit)="addProduct()">
+
   <div class="container">
     <div class="jumbotron">
       <p>Add a product:</p>
-  <label>
+
+      <!-- FormGroup -->
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label">
     Name:
     <input type="text" formControlName="name">
   </label>
+  </div>
 
-  <label>
+      <div class="form-group row">
+  <label  class="col-sm-2 col-form-label">
     Description:
     <input type="text" formControlName="description">
   </label>
+      </div>
 
-  <label>
+      <div class="form-group row">
+  <label class="col-sm-2 col-form-label">
     Price:
     <input type="number" formControlName="price">
   </label>
+      </div>
 
-  <label>
+        <!-- Category -->
+      <div class="form-group row">
+  <label  class="col-sm-2 col-form-label">
     Category:
     <input type="text" formControlName="category">
   </label>
+      </div>
 
-  <label>
+      <div class="form-group row">
+  <label  class="col-sm-2 col-form-label">
     Stock:
     <input type="number" formControlName="stock">
   </label>
+      </div>
 
-  <label>
+      <div class="form-group row">
+  <label  class="col-sm-2 col-form-label">
     PicUrl:
     <input type="text" formControlName="picUrl">
   </label>
+      </div>
 
-
-
-  <!-- lower buttons -->
+  <!-- buttons -->
   <br>
   <div class="form-group row">
     <div class="col-sm-10">
@@ -46,3 +60,4 @@
     </div>
   </div>
 </form>
+
