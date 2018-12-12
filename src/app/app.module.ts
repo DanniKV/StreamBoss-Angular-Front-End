@@ -11,6 +11,8 @@ import {ProductsAddComponent} from './products/products-add/products-add.compone
 import {ProductsDetailsComponent} from './products/products-details/products-details.component';
 import {ProductsUpdateComponent} from './products/products-update/products-update.component';
 import {FooterComponent} from './shared/footer/footer.component';
+import {LoginComponent} from './shared/guard/login/login.component';
+import {AuthenticationService} from './shared/services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import {FooterComponent} from './shared/footer/footer.component';
     ProductsAddComponent,
     ProductsDetailsComponent,
     ProductsUpdateComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
 
 
   ],
@@ -32,7 +35,7 @@ import {FooterComponent} from './shared/footer/footer.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

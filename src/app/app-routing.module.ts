@@ -5,13 +5,15 @@ import {ProductsListComponent} from './products/products-list/products-list.comp
 import {ProductsAddComponent} from './products/products-add/products-add.component';
 import {ProductsDetailsComponent} from './products/products-details/products-details.component';
 import {ProductsUpdateComponent} from './products/products-update/products-update.component';
+import {LoginComponent} from './shared/guard/login/login.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'products', component: ProductsListComponent},
   {path: 'add', component: ProductsAddComponent},
   {path: 'details/:id', component: ProductsDetailsComponent},
-  {path: 'update/:id', component: ProductsUpdateComponent}
+  {path: 'update/:id', component: ProductsUpdateComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({

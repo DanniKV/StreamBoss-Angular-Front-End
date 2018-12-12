@@ -13,7 +13,7 @@ export class AuthenticationService {
     localStorage.removeItem('currentUser');
   }
   login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(this.apiUrl,{username, password })
+    return this.http.post<any>(environment.apiUrl + '/api/token', { username, password })
       .pipe(map(response => {
         const token = response && response.token;
         // login successful if there's a jwt token in the response
