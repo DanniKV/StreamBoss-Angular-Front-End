@@ -13,6 +13,9 @@ import {ProductsUpdateComponent} from './products/products-update/products-updat
 import {FooterComponent} from './shared/footer/footer.component';
 import {LoginComponent} from './shared/guard/login/login.component';
 import {AuthenticationService} from './shared/services/authentication.service';
+import { UsersAddComponent } from './users/users-add/users-add.component';
+import { UsersDetailsComponent } from './users/users-details/users-details.component';
+import { UsersUpdateComponent } from './users/users-update/users-update.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import {AuthenticationService} from './shared/services/authentication.service';
     ProductsDetailsComponent,
     ProductsUpdateComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    UsersAddComponent,
+    UsersDetailsComponent,
+    UsersUpdateComponent
 
 
   ],
