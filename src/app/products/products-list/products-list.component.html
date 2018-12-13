@@ -1,14 +1,41 @@
-<h4>ADMIN PRODUCT LIST!</h4>
+
+
+<!--
 <button routerLink="/add">Add Product!</button>
+-->
+<div class="container">
+<div class="jumbotron">
+  <button type="button" class="btn btn-primary">Tilføj Produkt</button>
+  <hr>
+  <div class="row">
 
-<ul *ngIf="products">
-  <li *ngFor="let product of products">
-    <div fxLayoutGap="5px">
-    <a routerLink="/details/{{product.id}}">
-      {{product.name}} </a>
+    <div class="col-xl-2">
+      <h5>Webshop</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#">Webcams</a></li>
+        <li class="list-group-item"><a href="#">Capture Cards</a></li>
+        <li class="list-group-item"><a href="#">Mikrofoner</a></li>
+        <li class="list-group-item"><a href="#">Gamerstole</a></li>
+        <li class="list-group-item"><a href="#">Green Screens</a></li>
+      </ul>
+
+      <h5>Grafik</h5>
+      <ul class="list-group">
+        <li class="list-group-item"><a href="#"> Layout</a></li>
+        <li class="list-group-item"><a href="#"> Banner</a></li>
+      </ul>
     </div>
-  </li>
-</ul>
 
-
-<h1 *ngIf="!products">Loading...</h1>
+    <div class="col-xl-9">
+      <h5>Label for kategori</h5>
+      <ul class="list-group" *ngIf="products">
+        <li class="list-group-item" *ngFor="let product of products">
+            <a routerLink="/details/{{product.id}}">
+              {{product.name}} </a>
+            <h1 *ngIf="!products">Loading...</h1>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>

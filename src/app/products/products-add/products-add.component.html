@@ -1,82 +1,90 @@
-<h2>Admin Page</h2>
 <form [formGroup]="productForm" (ngSubmit)="addProduct()">
 
   <div class="container">
     <div class="jumbotron">
       <p>Tilføj produkt:</p>
 
-      <!-- FormGroup -->
+      <!-- Label Name -->
   <div class="form-group row">
-  <label class="col-sm-2 col-form-label">
-    Name:
+  <label class="col-sm-2 col-form-label">Name:</label>
+    <div class="col-sm-10">
     <input class="form-control" type="text" formControlName="name" placeholder="Navn">
-  </label>
+  </div>
   </div>
 
-      <!-- Category  Options! -->
-      <label>Type:</label>
+      <!-- Category  Options: VIRKER IKKE ENDNU!-->
       <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Type:</label>
         <div class="col-sm-10">
           <div class="form-group">
             <select class="form-control">
               <optgroup label="Webshop">
-                <option value="headset">Headset</option>
-                <option value="capturecard">Capture Card</option>
-                <option value="microphone">Mikrofon</option>
-                <option value="gamerchair">Gamerstol</option>
-                <option value="webcam">Webcam</option>
-                <option value="greenscreen">Greenscreen</option>
+                <option value="Headset">Headset</option>
+                <option value="Capturecard">Capture Card</option>
+                <option value="Mikrofon">Mikrofon</option>
+                <option value="GamerStol">Gamerstol</option>
+                <option value="Webcam">Webcam</option>
+                <option value="Greenscreen">Greenscreen</option>
               </optgroup>
               <optgroup label="Grafik">
-                <option value="overlay">Overlay</option>
-                <option value="banner">Banner</option>
+                <option value="Overlay">Overlay</option>
+                <option value="Banner">Banner</option>
               </optgroup>
             </select>
           </div>
         </div>
       </div>
 
-
-
-
-
-
-
+      <!-- Label Description -->
       <div class="form-group row">
-  <label  class="col-sm-2 col-form-label">
-    Description:
-    <input class="form-control" type="text" formControlName="description" placeholder="Beskrivelse">
-  </label>
+  <label  class="col-sm-2 col-form-label">Description:</label>
+        <div class="col-sm-10">
+          <textarea class="form-control" rows="3" type="text" formControlName="description" placeholder="Beskrivelse"></textarea>
+      </div>
       </div>
 
-      <!-- WholeSale,VAT, retail -->
-
-
-
-      <!-- Labels -->
+      <!-- Label RetailPrice -->
       <div class="form-group row">
-  <label class="col-sm-2 col-form-label">
-    Price:
-    <input class="form-control" type="number" formControlName="price" placeholder="Pris">
-  </label>
+  <label class="col-sm-2 col-form-label">RetailPrice:</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="number" formControlName="retailPrice" placeholder="IndkøbsPris">
+      </div>
+      </div>
+
+      <!-- Check Box VAT: VIRKER IKKE ENDNU! -->
+      <div class="form-group row">
+        <label for="productVAT" class="col-sm-2 col-form-label">Inkl. 25% moms</label>
+        <div class="col-sm-10">
+          <input type="checkbox" id="productVAT" value="productVAT">
+        </div>
       </div>
 
 
+      <!-- Label WholeSalePrice -->
       <div class="form-group row">
-  <label  class="col-sm-2 col-form-label">
-    Stock:
-    <input class="form-control" type="number" formControlName="stock" placeholder="På Lager">
-  </label>
+        <label class="col-sm-2 col-form-label">WholeSalePrice:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="number" formControlName="wholeSalePrice" placeholder="Salgspris">
+      </div>
       </div>
 
+      <!-- Label Stock -->
       <div class="form-group row">
-  <label  class="col-sm-2 col-form-label">
-    PicUrl:
-    <input class="form-control" type="text" formControlName="picUrl" placeholder="Url link">
-  </label>
+  <label  class="col-sm-2 col-form-label">Stock:</label>
+        <div class="col-sm-10">
+        <input class="form-control" type="number" formControlName="stock" placeholder="LagerAntal">
+      </div>
       </div>
 
-  <!-- buttons -->
+      <!-- Pic FileChooser -->
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Billede</label>
+        <div class="col-sm-10">
+          <input type="file" formControlName="PicUrl" accept="image/gif, image/jpeg, image/png"/>
+        </div>
+      </div>
+
+  <!-- Submit/Reset buttons -->
   <br>
   <div class="form-group row" >
     <div class="col-sm-10">
@@ -87,4 +95,5 @@
     </div>
   </div>
 </form>
+
 

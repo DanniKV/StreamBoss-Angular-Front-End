@@ -2,7 +2,8 @@ export class Product {
   id: number;
   name: string;
   description: string;
-  price: number;
+  retailPrice: number;
+  wholeSalePrice: number;
   category: string;
   stock: number;
   picUrl: string;

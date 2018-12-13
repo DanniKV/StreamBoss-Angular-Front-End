@@ -12,7 +12,8 @@ export class ProductsAddComponent implements OnInit {
   productForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
-    price: new FormControl(''),
+    retailPrice: new FormControl(''),
+    wholeSalePrice: new FormControl(''),
     category: new FormControl(''),
     stock: new FormControl(''),
     picUrl: new FormControl('')

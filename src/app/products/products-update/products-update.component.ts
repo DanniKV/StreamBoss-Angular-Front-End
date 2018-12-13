@@ -14,7 +14,8 @@ export class ProductsUpdateComponent implements OnInit {
   productForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),
-    price: new FormControl(''),
+    retailPrice: new FormControl(''),
+    wholeSalePrice: new FormControl(''),
     category: new FormControl(''),
     stock: new FormControl(''),
     picUrl: new FormControl('')
@@ -31,7 +32,8 @@ export class ProductsUpdateComponent implements OnInit {
         this.productForm.patchValue( {
           name: prodFromRest.name,
           description: prodFromRest.description,
-          price: prodFromRest.price,
+          retailPrice: prodFromRest.retailPrice,
+          wholeSalePrice: prodFromRest.wholeSalePrice,
           category: prodFromRest.category,
           stock: prodFromRest.stock,
           picUrl: prodFromRest.picUrl
