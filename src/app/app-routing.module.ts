@@ -6,14 +6,25 @@ import {ProductsAddComponent} from './products/products-add/products-add.compone
 import {ProductsDetailsComponent} from './products/products-details/products-details.component';
 import {ProductsUpdateComponent} from './products/products-update/products-update.component';
 import {LoginComponent} from './shared/guard/login/login.component';
+import {UsersAddComponent} from './users/users-add/users-add.component';
+import {AdminGuard} from './shared/guard/admin.guard';
+import {NoAccessComponent} from './shared/no-access/no-access.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'products', component: ProductsListComponent},
-  {path: 'add', component: ProductsAddComponent},
+  {path: 'add',
+    component: ProductsAddComponent,
+    /*canActivate: [AdminGuard]*/},
   {path: 'details/:id', component: ProductsDetailsComponent},
-  {path: 'update/:id', component: ProductsUpdateComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'update/:id', component: ProductsUpdateComponent,
+    /*canActivate: [AdminGuard]*/},
+  {path: 'registration', component: UsersAddComponent},
+  {path: 'login', component: LoginComponent},
+  { path: 'no-access',
+    component: NoAccessComponent,
+    data: { title: 'No Access' }
+  },
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['../../shared/css/StreamBossCSS.css']
+
 })
 export class NavbarComponent implements OnInit {
 
@@ -11,5 +12,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  test() {
+    console.log("BABRABRBAR");
+  }
 }

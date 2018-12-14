@@ -16,6 +16,9 @@ import {AuthenticationService} from './shared/services/authentication.service';
 import { UsersAddComponent } from './users/users-add/users-add.component';
 import { UsersDetailsComponent } from './users/users-details/users-details.component';
 import { UsersUpdateComponent } from './users/users-update/users-update.component';
+import {AdminGuard} from './shared/guard/admin.guard';
+import {AuthGuard} from './shared/guard/auth.guard';
+import { NoAccessComponent } from './shared/no-access/no-access.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +33,8 @@ import { UsersUpdateComponent } from './users/users-update/users-update.componen
     LoginComponent,
     UsersAddComponent,
     UsersDetailsComponent,
-    UsersUpdateComponent
-
+    UsersUpdateComponent,
+    NoAccessComponent,
 
   ],
   imports: [
@@ -41,7 +44,9 @@ import { UsersUpdateComponent } from './users/users-update/users-update.componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService,
+  AuthGuard,
+  AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

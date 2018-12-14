@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     // reset login status
-    this.authenticationService.logout();
+   // this.authenticationService.clearToken();
   }
-
+/*
   submitLogin() {
     this.authenticationService.login
     (this.loginForm.get('username').value, this.loginForm.get('password').value)
@@ -36,5 +36,5 @@ export class LoginComponent implements OnInit {
           this.errormessage = error;
           console.log('It didnt work!');
         });
-  }
+  } */
 }

@@ -29,9 +29,7 @@ export class ProductsAddComponent implements OnInit {
   }
 
   addProduct() {
-    debugger;
     const product = this.productForm.value;
-    debugger;
     this.productService.addProduct(product)
       .subscribe(product => {
         //this.router.navigateByUrl("/product")
