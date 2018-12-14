@@ -17,20 +17,22 @@
         <label class="col-sm-2 col-form-label">Type:</label>
         <div class="col-sm-10">
           <div class="form-group">
-            <select class="form-control" formControlName="category">
-              <optgroup label="Webshop">
-                <option value="Headset">Headset</option>
-                <option value="Capturecard">Capture Card</option>
-                <option value="Mikrofon">Mikrofon</option>
-                <option value="GamerStol">Gamerstol</option>
-                <option value="Webcam">Webcam</option>
-                <option value="Greenscreen">Greenscreen</option>
-              </optgroup>
-              <optgroup label="Grafik">
-                <option value="Overlay">Overlay</option>
-                <option value="Banner">Banner</option>
-              </optgroup>
-            </select>
+            <label>
+              <select class="form-control" formControlName="category">
+                <optgroup label="Webshop">
+                  <option value="Headset">Headset</option>
+                  <option value="Capturecard">Capture Card</option>
+                  <option value="Mikrofon">Mikrofon</option>
+                  <option value="GamerStol">Gamerstol</option>
+                  <option value="Webcam">Webcam</option>
+                  <option value="Greenscreen">Greenscreen</option>
+                </optgroup>
+                <optgroup label="Grafik">
+                  <option value="Overlay">Overlay</option>
+                  <option value="Banner">Banner</option>
+                </optgroup>
+              </select>
+            </label>
           </div>
         </div>
       </div>
@@ -76,13 +78,17 @@
       </div>
       </div>
 
-      <!-- Pic FileChooser -->
+      <!--
+      BIG ERRORS HAPPENING DUE TO THIS SOMEHOW
+      <!- Pic FileChooser ->
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Billede</label>
         <div class="col-sm-10">
           <input type="file" formControlName="PicUrl" accept="image/gif, image/jpeg, image/png"/>
         </div>
       </div>
+
+      -->
 
   <!-- Submit/Reset buttons -->
   <br>

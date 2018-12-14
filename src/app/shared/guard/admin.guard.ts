@@ -14,15 +14,15 @@ export class AdminGuard implements CanActivate {
     pipe(
       first(),
       map(user => {
-        if (user && user.role === 'Administrator') {
+        if (JSON.stringify(user).includes('role":"Administrator"')) {
           return true;
         } else {
+          debugger;
           // not logged in with right role so redirect to login page with the return url
           this.router.navigateByUrl('/no-access');
           return false;
         }
       })
     );
-
   }
 }

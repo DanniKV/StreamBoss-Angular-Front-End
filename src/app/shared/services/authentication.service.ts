@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {BehaviorSubject, Observable, Subject, Subscription} from 'rxjs';
 import {map, switchMap} from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
-import {User} from '../models/users';
+import {User} from '../models/user';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import {containsElement} from '@angular/animations/browser/src/render/shared';
 
 
 @Injectable()
 export class AuthenticationService {
 
   public isLoggedIn = new BehaviorSubject<boolean>(!!this.getToken());
+  public User;
 
   constructor(private http: HttpClient) {}
 
@@ -22,7 +24,7 @@ export class AuthenticationService {
         // login successful if there's a jwt token in the response
         if (token) {
           // store username and jwt token in local storage to keep user logged in between page refreshes
-          localStorage.setItem('currentUser', JSON.stringify({ username: username, token: token }));
+          localStorage.setItem('token', JSON.stringify({ username: username, token: token }));
           // return true to indicate successful login
           this.setToken(token);
           return true;
@@ -34,34 +36,22 @@ export class AuthenticationService {
       }));
   }
 
-/*
-  public login(user: User): Observable<string> {
-    return this.http.post<string>(environment.apiUrl + '/login', user, {responseType: 'text' as 'json'})
-      .pipe(
-        switchMap(token => Observable.create(obs => {
-            this.setToken(token);
-            obs.next(token);
-          })
-        )
-      );
-  } */
   public setToken(token: string) {
-    localStorage.setItem('currentUser', token);
+    localStorage.setItem('token', token);
     this.isLoggedIn.next(!!token);
   }
 
   public clearToken() {
-    localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
     this.isLoggedIn.next(undefined);
   }
 
   public getToken() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser && currentUser.token;
+    return localStorage.getItem('token');
   }
 
   public isAuthenticated(): Observable<boolean> {
-    // get the token aand notify listeners!
+    // get the token and notify listeners!
     return Observable.create(obs => {
       obs.next(this.getToken());
     });
@@ -78,7 +68,6 @@ export class AuthenticationService {
       }
       obs.next(decoded);
     });
-
   }
 
 

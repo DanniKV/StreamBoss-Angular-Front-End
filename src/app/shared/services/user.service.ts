@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {User} from '../models/users';
+import {User} from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class UserService {
   }
 
 
-  //CRUD Operations!
+  // CRUD Operations!
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
   }
@@ -22,7 +22,7 @@ export class UserService {
     return this.http.post<User>(this.apiUrl, user);
   }
   updateUser(user: User): Observable<User> {
-    //Using RestAPI
+    // Using RestAPI
     return this.http.put<User>(this.apiUrl + '/' + user.id, user);
   }
   getUserById(id: number): Observable<User> {

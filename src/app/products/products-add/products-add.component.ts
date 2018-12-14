@@ -16,7 +16,7 @@ export class ProductsAddComponent implements OnInit {
     wholeSalePrice: new FormControl(''),
     category: new FormControl(''),
     stock: new FormControl(''),
-    picUrl: new FormControl('')
+   // picUrl: new FormControl('')   -GIVES BIG ERROR MESSAGE CAUSE IT DOESNT EXIST IN THE HTML
   });
 
 
