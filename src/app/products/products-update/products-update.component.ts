@@ -40,7 +40,7 @@ export class ProductsUpdateComponent implements OnInit {
         });
       });
   }
-  saveProduct() {
+  updateProduct() {
     const prod = this.productForm.value;
     prod.id = this.id;
     this.productService.updateProduct(prod)
