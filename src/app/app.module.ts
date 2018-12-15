@@ -19,6 +19,7 @@ import { UsersUpdateComponent } from './users/users-update/users-update.componen
 import {AdminGuard} from './shared/guard/admin.guard';
 import {AuthGuard} from './shared/guard/auth.guard';
 import { NoAccessComponent } from './shared/no-access/no-access.component';
+import {ProductsAdminListComponent} from './products/products-admin-list/products-admin-list.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NoAccessComponent } from './shared/no-access/no-access.component';
     UsersDetailsComponent,
     UsersUpdateComponent,
     NoAccessComponent,
+    ProductsAdminListComponent
 
   ],
   imports: [
