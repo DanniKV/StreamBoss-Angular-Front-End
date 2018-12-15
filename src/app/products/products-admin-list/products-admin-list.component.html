@@ -1,28 +1,28 @@
 <div class="container">
   <div class="jumbotron">
-    <button type="button" class="btn btn-primary">Tilføj Produkt</button>
+    <button routerLink="/add" type="button" class="btn btn-primary">Tilføj Produkt</button>
     <hr>
     <div class="row">
 
       <div class="col-xl-2">
         <h5>Webshop</h5>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#">Webcams</a></li>
-          <li class="list-group-item"><a href="#">Capture Cards</a></li>
-          <li class="list-group-item"><a href="#">Mikrofoner</a></li>
-          <li class="list-group-item"><a href="#">Gamerstole</a></li>
-          <li class="list-group-item"><a href="#">Green Screens</a></li>
-        </ul>
-
-        <h5>Grafik</h5>
-        <ul class="list-group">
-          <li class="list-group-item"><a href="#"> Layout</a></li>
-          <li class="list-group-item"><a href="#"> Banner</a></li>
-        </ul>
+        <div class="list-group">
+          <button (click)="getCategory('Webcam')" class="list-group-item">Webcams</button>
+          <button (click)="getCategory('Capturecard')" class="list-group-item">Capturecards</button>
+          <button (click)="getCategory('Mikrofon')" class="list-group-item">Mikrofoner</button>
+          <button (click)="getCategory('Headset')" class="list-group-item">Headsets</button>
+          <button (click)="getCategory('GamerStol')" class="list-group-item">GamerStole</button>
+          <button (click)="getCategory('Greenscreen')" class="list-group-item">Greenscreens</button>
+        </div>
+          <h5>Grafik</h5>
+        <div class="list-group">
+          <button (click)="getCategory('Layout')" class="list-group-item">Layout</button>
+          <button (click)="getCategory('Banner')" class="list-group-item">Banner</button>
+        </div>
       </div>
 
       <div class="col-xl-9">
-        <h5>Label for kategori</h5>
+        <h5> {{this.categoryTitle}}</h5>
         <ul class="list-group" *ngIf="products">
           <li class="list-group-item" *ngFor="let product of products">
             <a routerLink="/details/{{product.id}}">
