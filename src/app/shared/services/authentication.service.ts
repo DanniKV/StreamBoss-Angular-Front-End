@@ -12,7 +12,6 @@ import {containsElement} from '@angular/animations/browser/src/render/shared';
 export class AuthenticationService {
 
   public isLoggedIn = new BehaviorSubject<boolean>(!!this.getToken());
-  public User;
 
   constructor(private http: HttpClient) {}
 

@@ -1,6 +1,18 @@
-<h2 class="text-center">Her skal indsættes kategorien der er valgt fra dropdown</h2>
+<h2 class="text-center">{{this.categoryTitle}}</h2>
 <hr>
-
+<div class="row">
+<div class="col-xl-2">
+  <h5>Webshop</h5>
+  <div class="list-group">
+    <button (click)="refresh()" class="list-group-item">Alle Produkter</button>
+    <button (click)="getCategory('Webcam')" class="list-group-item">Webcams</button>
+    <button (click)="getCategory('Capturecard')" class="list-group-item">Capturecards</button>
+    <button (click)="getCategory('Mikrofon')" class="list-group-item">Mikrofoner</button>
+    <button (click)="getCategory('Headset')" class="list-group-item">Headsets</button>
+    <button (click)="getCategory('GamerStol')" class="list-group-item">GamerStole</button>
+    <button (click)="getCategory('Greenscreen')" class="list-group-item">Greenscreens</button>
+  </div>
+</div>
 
 <div  class="container">
   <div  class="row text-center">
@@ -18,4 +30,4 @@
 
   </div>
 </div>
-
+</div>

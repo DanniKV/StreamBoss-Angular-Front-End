@@ -13,6 +13,8 @@ import {ProductsAdminListComponent} from './products/products-admin-list/product
 import {FAQComponent} from './faq/faq.component';
 import {KontaktComponent} from './kontakt/kontakt.component';
 import {TradeTermsComponent} from './trade-terms/trade-terms.component';
+import {UsersDetailsComponent} from './users/users-details/users-details.component';
+import {UsersUpdateComponent} from './users/users-update/users-update.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -21,18 +23,24 @@ const routes: Routes = [
     component: ProductsAddComponent,
     canActivate: [AdminGuard]},
   {path: 'details/:id', component: ProductsDetailsComponent},
-  {path: 'update/:id', component: ProductsUpdateComponent,
-   canActivate: [AdminGuard]},
+  {path: 'update/:id',
+    component: ProductsUpdateComponent,
+    canActivate: [AdminGuard]},
   {path: 'registration', component: UsersAddComponent},
   {path: 'login', component: LoginComponent},
   {path: 'FAQ', component: FAQComponent},
-  {path: 'admin-products', component: ProductsAdminListComponent},
+  {path: 'admin-products',
+    component: ProductsAdminListComponent,
+    canActivate: [AdminGuard]},
   {path: 'contact', component: KontaktComponent},
   {path: 'terms', component: TradeTermsComponent},
   { path: 'no-access',
     component: NoAccessComponent,
     data: { title: 'No Access' }
   },
+  {path: 'account', component: UsersDetailsComponent},
+  {path: 'account-edit', component: UsersUpdateComponent},
+
 ];
 
 @NgModule({

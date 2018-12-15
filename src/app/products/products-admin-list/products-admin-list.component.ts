@@ -18,7 +18,7 @@ export class ProductsAdminListComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.getAllProducts()
+    this.getAllProducts();
   }
 
   delete(id: number) {

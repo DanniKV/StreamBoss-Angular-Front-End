@@ -6,7 +6,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-users-add',
   templateUrl: './users-add.component.html',
-  styleUrls: ['./users-add.component.css']
+  styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class UsersAddComponent implements OnInit {
   userForm = new FormGroup({
