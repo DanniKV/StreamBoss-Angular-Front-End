@@ -22,6 +22,7 @@ import { NoAccessComponent } from './shared/no-access/no-access.component';
 import {ProductsAdminListComponent} from './products/products-admin-list/products-admin-list.component';
 import { FAQComponent } from './faq/faq.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
+import { TradeTermsComponent } from './trade-terms/trade-terms.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { KontaktComponent } from './kontakt/kontakt.component';
     NoAccessComponent,
     ProductsAdminListComponent,
     FAQComponent,
-    KontaktComponent
+    KontaktComponent,
+    TradeTermsComponent
 
   ],
   imports: [
