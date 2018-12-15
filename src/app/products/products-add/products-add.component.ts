@@ -32,7 +32,7 @@ export class ProductsAddComponent implements OnInit {
     const product = this.productForm.value;
     this.productService.addProduct(product)
       .subscribe(product => {
-        //this.router.navigateByUrl("/product")
+        this.router.navigateByUrl("/product")
       });
   }
 }

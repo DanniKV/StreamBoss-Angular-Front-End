@@ -10,6 +10,8 @@ import {UsersAddComponent} from './users/users-add/users-add.component';
 import {AdminGuard} from './shared/guard/admin.guard';
 import {NoAccessComponent} from './shared/no-access/no-access.component';
 import {ProductsAdminListComponent} from './products/products-admin-list/products-admin-list.component';
+import {FAQComponent} from './faq/faq.component';
+import {KontaktComponent} from './kontakt/kontakt.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -22,7 +24,9 @@ const routes: Routes = [
    canActivate: [AdminGuard]},
   {path: 'registration', component: UsersAddComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'FAQ', component: FAQComponent},
   {path: 'admin-products', component: ProductsAdminListComponent},
+  {path: 'contact', component: KontaktComponent},
   { path: 'no-access',
     component: NoAccessComponent,
     data: { title: 'No Access' }
