@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+    /*
     this.subscription = this.authenticationService.isLoggedIn
       .pipe(
         // Map to
@@ -26,9 +27,9 @@ export class NavbarComponent implements OnInit {
           return this.authenticationService.getUserFromToken();
         })
       ).subscribe(user => {
-        this.username = user ? user.name : '';
+        this.username = user ? user.userName : '';
           this.role = user ? user.role : '';
       });
-
+    */
   }
 }

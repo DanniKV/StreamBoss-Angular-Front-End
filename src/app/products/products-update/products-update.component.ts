@@ -10,7 +10,7 @@ import {ProductService} from '../../shared/services/product.service';
   styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class ProductsUpdateComponent implements OnInit {
-  id: number;
+  id: any;
   productForm = new FormGroup({
     name: new FormControl(''),
     description: new FormControl(''),

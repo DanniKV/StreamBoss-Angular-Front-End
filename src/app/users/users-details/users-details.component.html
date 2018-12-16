@@ -1,3 +1,21 @@
-<p>
-  users-details works!
-</p>
+
+<div class="container">
+  <div class="jumbotron">
+<div>
+<h3>
+  <b> Brugernavn: {{user.userName}} </b> <br>
+  <b> Fornavn: {{user.firstName}} </b> <br>
+  <b> Efternavn: {{user.lastName}} </b> <br>
+  <b> Email: {{user.email}} </b> <br>
+  <b> Telefonnummer: {{user.phoneNumber}} </b> <br>
+  <b> Addresse: {{user.address}} </b> <br>
+  <b> By: {{user.city}} </b> <br>
+  <b> Postnummer: {{user.zipCode}} </b> <br>
+</h3>
+</div>
+<div class="col-sm-10">
+  <button type="submit" routerLink="/account-edit" class="btn btn-primary">Rediger bruger</button>
+  <button type="button" class="btn btn-danger" (click)="deleteUser()">Slet Bruger</button>
+</div>
+
+  </div></div>

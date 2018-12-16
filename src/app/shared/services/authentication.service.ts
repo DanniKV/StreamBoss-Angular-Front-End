@@ -68,6 +68,15 @@ export class AuthenticationService {
       obs.next(decoded);
     });
   }
-
-
+  public getIdFromToken(): Observable<any> {
+    const token = this.getToken();
+    let decoded: User;
+    let decodedId: any;
+    if (token) {
+      const jwt = new JwtHelperService();
+      decoded = jwt.decodeToken(token);
+      decodedId = decoded.id;
+    }
+    return decodedId;
+  }
 }
