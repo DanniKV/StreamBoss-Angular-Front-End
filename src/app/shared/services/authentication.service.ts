@@ -63,7 +63,6 @@ export class AuthenticationService {
       if (token) {
         const jwt = new JwtHelperService();
         decoded = jwt.decodeToken(token);
-        console.log(jwt.decodeToken(token));
       }
       obs.next(decoded);
     });
@@ -78,5 +77,17 @@ export class AuthenticationService {
       decodedId = decoded.id;
     }
     return decodedId;
+  }
+
+  public getRoleFromToken(): Observable<any> {
+    const token = this.getToken();
+    let decoded: User;
+    let decodedRole: any;
+    if (token) {
+      const jwt = new JwtHelperService();
+      decoded = jwt.decodeToken(token);
+      decodedRole = decoded.role;
+    }
+    return decodedRole;
   }
 }

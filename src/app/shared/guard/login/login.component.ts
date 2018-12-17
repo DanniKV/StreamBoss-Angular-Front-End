@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AuthenticationService} from '../../services/authentication.service';
 import {Router} from '@angular/router';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
     username: new FormControl(),
     password: new FormControl()
   });
-  errormessage = 'AaAAAaAAAAAAAAAAA';
+  errormessage = '';
+  role: any;
 
   constructor(
     private router: Router,
@@ -29,12 +31,16 @@ export class LoginComponent implements OnInit {
     (this.loginForm.get('username').value, this.loginForm.get('password').value)
       .subscribe(
         () => {
-          this.router.navigate(['/']);
-          console.log('WORKS!');
-        },
+          this.role = this.authenticationService.getRoleFromToken();
+          if (this.role === 'Administrator') {
+            this.router.navigate(['/admin-products']);
+          } else {
+            this.router.navigate(['/']);
+            console.log('Your login succeeded.');
+          }},
         error => {
           this.errormessage = error;
-          console.log('It didnt work!');
+          console.log('Your login failed.!');
         });
   }
 }
