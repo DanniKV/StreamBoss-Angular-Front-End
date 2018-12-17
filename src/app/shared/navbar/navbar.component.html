@@ -1,13 +1,14 @@
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"> <a class="nav-link" routerLink="/">Home</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/products">Webshop</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/admin-products">AdminList</a> </li>
+      <li class="nav-item"> <a class="nav-link" routerLink="/products">Produkter</a> </li>
       <li class="nav-item"> <a class="nav-link" routerLink="/contact">Kontakt</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/add">Add Product</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/account">Account</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/login">login</a> </li>
+      <li *ngIf="loggedIn" class="nav-item"> <a class="nav-link" onMouseOver="this.style.cursor='pointer'" (click)="logOut()">Logout</a> </li>
+
+      <li *ngIf="loggedIn" class="nav-item"> <a class="nav-link" onMouseOver="this.style.cursor='pointer'" (click)="account()">Min Side</a> </li>
+
+      <li *ngIf="!loggedIn" class="nav-item"> <a class="nav-link" onMouseOver="this.style.cursor='pointer'" (click)="account()">Login</a> </li>
 
     </ul>
     <ul class="navbar-nav">

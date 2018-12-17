@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {AuthenticationService} from '../../services/authentication.service';
 import {Router} from '@angular/router';
 import {User} from '../../models/user';
+import {NavbarComponent} from '../../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
