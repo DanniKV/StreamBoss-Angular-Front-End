@@ -15,7 +15,6 @@ import {KontaktComponent} from './kontakt/kontakt.component';
 import {TradeTermsComponent} from './trade-terms/trade-terms.component';
 import {UsersDetailsComponent} from './users/users-details/users-details.component';
 import {UsersUpdateComponent} from './users/users-update/users-update.component';
-import {ProductsGraphicsListComponent} from './products/products-graphics-list/products-graphics-list.component';
 
 const routes: Routes = [
   {path: '', component: WelcomeComponent},
@@ -28,7 +27,6 @@ const routes: Routes = [
     component: ProductsUpdateComponent,
     canActivate: [AdminGuard]},
   {path: 'registration', component: UsersAddComponent},
-  {path: 'graphics', component: ProductsGraphicsListComponent},
   {path: 'login', component: LoginComponent},
   {path: 'FAQ', component: FAQComponent},
   {path: 'admin-products',
