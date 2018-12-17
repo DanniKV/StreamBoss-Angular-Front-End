@@ -1,0 +1,28 @@
+<h2 class="text-center">{{this.categoryTitle}}</h2>
+<hr>
+<div class="row">
+  <div class="col-xl-2">
+    <h5>Webshop</h5>
+    <div class="list-group">
+      <button (click)="getCategory('Layout')" class="list-group-item">Layout</button>
+      <button (click)="getCategory('Banner')" class="list-group-item">Banner</button>
+    </div>
+  </div>
+
+  <div  class="container">
+    <div  class="row text-center">
+
+      <div *ngFor="let product of products" class="col-md-4 pb-1 pb-md-0">
+        <div class="card">
+          <img class="card-img-top" src="../../../assets/images/400X200.gif" width="400" height="200" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description.slice(0,150)}}...</p>
+            <a href="/details/{{product.id}}" class="btn btn-primary">Vis</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

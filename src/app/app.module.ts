@@ -23,6 +23,7 @@ import {ProductsAdminListComponent} from './products/products-admin-list/product
 import { FAQComponent } from './faq/faq.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { TradeTermsComponent } from './trade-terms/trade-terms.component';
+import { ProductsGraphicsListComponent } from './products/products-graphics-list/products-graphics-list.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TradeTermsComponent } from './trade-terms/trade-terms.component';
     ProductsAdminListComponent,
     FAQComponent,
     KontaktComponent,
-    TradeTermsComponent
+    TradeTermsComponent,
+    ProductsGraphicsListComponent
 
   ],
   imports: [

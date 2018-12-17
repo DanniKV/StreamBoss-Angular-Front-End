@@ -20,6 +20,7 @@ export class ProductsListComponent implements OnInit {
 
   ngOnInit() {
   this.refresh();
+  //MANGLER FUNCTION TIL KUN AT KALDE PÅ PRODUKTER UDEN FOR GRAPHICS KATEGORIEN!
   }
 
   refresh() {
