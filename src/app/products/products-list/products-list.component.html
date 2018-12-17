@@ -20,6 +20,22 @@
 </div>
 
 <div  class="container">
+  <div class="row">
+    <div class="col-xl-12 text-right">
+      <div class="form-group row">
+        <label class="col-sm-10 col-form-label">Sorter efter:</label>
+        <div class="col-sm-2">
+          <div class="form-group">
+            <select class="form-control" id="sortBy">
+              <option value="name">Navn</option>
+              <option value="priceAscending">Pris - Lav -> Høj</option>
+              <option value="priceDescending">Pris - Høj -> Lav</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div  class="row text-center">
 
       <div *ngFor="let product of products" class="col-md-4 pb-1 pb-md-0">
