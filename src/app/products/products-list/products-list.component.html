@@ -4,7 +4,7 @@
   <div class="col-xl-2">
     <h5>Webshop</h5>
     <div class="list-group">
-      <button (click)="refresh()" class="list-group-item">Alle Produkter</button>
+      <button (click)="getAllProducts()" class="list-group-item">Alle Produkter</button>
       <button (click)="getCategory('Webcam')" class="list-group-item">Webcams</button>
       <button (click)="getCategory('Capturecard')" class="list-group-item">Capturecards</button>
       <button (click)="getCategory('Mikrofon')" class="list-group-item">Mikrofoner</button>
@@ -22,6 +22,7 @@
   <!-- Sorting -->
 
   <div  class="container">
+    <div class="jumbotron">
     <div class="row">
       <div class="col-xl-12 text-right">
         <div class="form-group row">
@@ -45,20 +46,19 @@
     <div  class="row text-center">
 
       <div *ngFor="let product of products| orderBy:sortBy" class="col-md-4 pb-1 pb-md-0">
-        <div class="card">
+        <div class="card" routerLink="/details/{{product.id}}" style="mouse: pointer">
           <img class="card-img-top" src="{{product.picUrl}}" width="400" height="200" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">{{product.name}}</h5>
             <p class="card-text">{{product.description.slice(0,150)}}...</p>
             <p><b>{{product.retailPrice}}.-</b></p>
-            <a href="/details/{{product.id}}" class="btn btn-primary">Vis</a>
+            <a href="#" class="btn btn-primary">Vis</a>
 
           </div>
         </div>
       </div>
-      <button (click)="next()">LOAD MORE PRODUCTS</button>
-      <button (click)="prev()">Go back a page</button>
 
+    </div>
     </div>
   </div>
 </div>
