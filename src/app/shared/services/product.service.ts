@@ -14,15 +14,6 @@ export class ProductService {
 
   constructor(private http: HttpClient) {
   }
-  Page = 1;
-  Items = 6;
-  //Crud Operations!
-  pageIncrement() {
-    this.Page ++;
-  }
-  pageDecrement() {
-    this.Page --;
-  }
 
   addProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(this.apiUrl, product);
@@ -32,7 +23,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl + '?CurrentPage=' + this.Page + '&ItemsPerPage=' + this.Items);
+    return this.http.get<Product[]>(this.apiUrl + "/");
   }
 
   updateProduct(product: Product): Observable<Product> {
