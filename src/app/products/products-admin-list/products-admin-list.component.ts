@@ -21,6 +21,10 @@ export class ProductsAdminListComponent implements OnInit {
     this.getAllProducts();
   }
 
+  /**
+   * Gets the products with the given category in the parameter.
+   * @param category
+   */
   getCategory(category: string) {
     this.categoryTitle = category;
     this.categoryService.getCategory(category)
@@ -29,6 +33,9 @@ export class ProductsAdminListComponent implements OnInit {
     });
   }
 
+  /**
+   * Gets all products from the database.
+   */
   getAllProducts() {
     this.categoryTitle = 'Alle Produkter';
     this.productService.getProducts()

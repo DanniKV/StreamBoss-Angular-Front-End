@@ -29,6 +29,11 @@ export class UsersAddComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Sends the userForms values to the User service.
+   * Then redirects to login.
+   * @constructor
+   */
   SaveUser() {
     const user = this.userForm.value;
     this.userService.addUser(user)

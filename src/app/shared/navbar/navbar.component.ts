@@ -20,6 +20,9 @@ export class NavbarComponent implements OnInit {
   constructor(private authenticationService: AuthenticationService,
   private router: Router) { }
 
+  /**
+   * Checks if someone is currently logged in.
+   */
   ngOnInit() {
     this.subscription = this.authenticationService.isLoggedIn
       .pipe(
@@ -33,6 +36,12 @@ export class NavbarComponent implements OnInit {
           this.role = user ? user.role : '';
       });
   }
+
+  /**
+   * Depending on the user information,
+   * whether they are an Administrator or User or not logged in
+   * and then it redirects them to the correct page.
+   */
   public account() {
     if (this.loggedIn === true && this.role === 'Administrator') {
         this.router.navigate(['/admin-products']);
@@ -42,6 +51,10 @@ export class NavbarComponent implements OnInit {
        this.router.navigate(['/login']);
     }
   }
+
+  /**
+   * Removes the token to log them out.
+   */
   public logOut() {
     this.router.navigate(['/']);
     this.authenticationService.clearToken();

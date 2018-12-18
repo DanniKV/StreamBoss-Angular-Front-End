@@ -9,13 +9,17 @@ import {Observable} from 'rxjs';
 
 export class CategoryService {
   apiUrl = 'https://streamboss.azurewebsites.net/api/category';
-  //apiUrl = 'http://localhost:64357/api/product'; //Postman Port
 
 
   constructor(private http: HttpClient) {
 
   }
+
+  /**
+   * Gets the database products with the given category.
+   * @param category
+   */
   getCategory(category: string): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl + "/" + category);
+    return this.http.get<Product[]>(this.apiUrl + '/' + category);
   }
 }

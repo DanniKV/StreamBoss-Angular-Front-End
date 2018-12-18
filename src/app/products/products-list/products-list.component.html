@@ -45,6 +45,7 @@
 
     <div  class="row text-center">
 
+      <!-- orderBy is done for the piping of objects to sort the products-->
       <div *ngFor="let product of products| orderBy:sortBy" class="col-md-4 pb-1 pb-md-0">
         <div class="card" routerLink="/details/{{product.id}}" style="mouse: pointer">
           <img class="card-img-top" src="{{product.picUrl}}" width="400" height="200" alt="Card image cap">

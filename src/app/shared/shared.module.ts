@@ -10,7 +10,11 @@ import {OrderByPipe} from './order-by.pipe';
 export class SharedModule { }
 
 
-
+/**
+ * Hello there!
+ * This is our shared module that is used for piping
+ * the orderBy pipe.
+ */
 
 
 

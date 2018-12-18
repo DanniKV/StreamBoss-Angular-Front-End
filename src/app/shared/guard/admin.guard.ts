@@ -14,10 +14,12 @@ export class AdminGuard implements CanActivate {
     pipe(
       first(),
       map(user => {
+        // Checks if the role on the token is Administrator.
         if (user.role === 'Administrator') {
+          // on TRUE it allows access.
           return true;
         } else {
-          // not logged in with right role so redirect to login page with the return url
+          // On false it redirects to a "No access" page.
           this.router.navigateByUrl('/no-access');
           return false;
         }

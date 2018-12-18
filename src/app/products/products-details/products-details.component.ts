@@ -14,6 +14,11 @@ export class ProductsDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private productService: ProductService) { }
 
+  /**
+   * On initializing the page, the "id" is taken from the URL
+   * and then sent to the product service, where it will then
+   * fill in the details from the returned object.
+   */
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProductById(id)

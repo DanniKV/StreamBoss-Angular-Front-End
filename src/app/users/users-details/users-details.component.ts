@@ -23,6 +23,11 @@ export class UsersDetailsComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets the Id from the token, then as long as the Id isn't null
+   * inputs the information from the user into the HTML.
+   * If null, redirects to no-access.
+   */
   getUser(): any {
     this.id = this.authenticationService.getIdFromToken();
     if (this.id != null) {
@@ -35,6 +40,12 @@ export class UsersDetailsComponent implements OnInit {
       this.router.navigateByUrl('/no-access');
     }
   }
+
+  /**
+   * First it gives a checkbox asking if the user is sure about deleting their account.
+   * Sends the Id from the user to the user service
+   * It then clears the token and redirects to the home page.
+   */
   deleteUser() {
     if (confirm('Are you sure about deleting your account?')) {
       this.userService.deleteUser(this.id)

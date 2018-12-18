@@ -34,6 +34,12 @@ export class UsersUpdateComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * Gets the users information from the id of the token
+   * and puts it into the User Form.
+   *
+   * Redirects to no access if no Id is found.
+   */
   getUser(): any {
     this.id = this.authenticationService.getIdFromToken();
     if (this.id != null) {
@@ -58,6 +64,11 @@ export class UsersUpdateComponent implements OnInit {
     }
   }
 
+  /**
+   * Saves the updated information in the userForm by sending the Id
+   * and the information from the userform to the Userservice.
+   * @constructor
+   */
   SaveUser() {
     const user = this.userForm.value;
     user.id = this.id;

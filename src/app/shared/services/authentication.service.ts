@@ -15,7 +15,13 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-
+  /**
+   * Sends the username and password to the TokenController.
+   * It then sets the token in localStorage if the login is correct.
+   * If not it responds with the console log of failed login.
+   * @param username
+   * @param password
+   */
   login(username: string, password: string): Observable<boolean> {
     return this.http.post<any>(environment.apiUrl + '/api/token', { username, password })
       .pipe(map(response => {
@@ -28,34 +34,49 @@ export class AuthenticationService {
           this.setToken(token);
           return true;
         } else {
-          console.log('Went bad');
+          console.log('Failed login');
           // return false to indicate failed login
           return false;
         }
       }));
   }
 
+  /**
+   * Sets the gotten token in the localstorage memory
+   * @param token
+   */
   public setToken(token: string) {
     localStorage.setItem('token', token);
     this.isLoggedIn.next(!!token);
   }
 
+  /**
+   * Clears the token from the localstorage memory
+   */
   public clearToken() {
     localStorage.removeItem('token');
     this.isLoggedIn.next(undefined);
   }
 
+  /**
+   * Gets the token from the local storage memory.
+   */
   public getToken() {
     return localStorage.getItem('token');
   }
 
+  /**
+   * Checks if there is a token in the memory and notifies listeners.
+   */
   public isAuthenticated(): Observable<boolean> {
-    // get the token and notify listeners!
     return Observable.create(obs => {
       obs.next(this.getToken());
     });
   }
 
+  /**
+   * Gets the user from the token by decoding it.
+   */
   public getUserFromToken(): Observable<User> {
     return Observable.create(obs => {
       const token = this.getToken();
@@ -67,6 +88,10 @@ export class AuthenticationService {
       obs.next(decoded);
     });
   }
+
+  /**
+   * Gets the Id from the Token by decoding it.
+   */
   public getIdFromToken(): Observable<any> {
     const token = this.getToken();
     let decoded: User;
@@ -79,6 +104,9 @@ export class AuthenticationService {
     return decodedId;
   }
 
+  /**
+   * Gets the role form the token by decoding it.
+   */
   public getRoleFromToken(): Observable<any> {
     const token = this.getToken();
     let decoded: User;

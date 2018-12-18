@@ -16,9 +16,9 @@ export class ProductsAddComponent implements OnInit {
     wholeSalePrice: new FormControl(''),
     category: new FormControl(''),
     stock: new FormControl(''),
-    picUrl: new FormControl('')   //-GIVES BIG ERROR MESSAGE CAUSE IT DOESNT EXIST IN THE HTML
+    picUrl: new FormControl('')
   });
-
+  label= '';
 
   constructor(private productService: ProductService,
               private router: Router) {
@@ -26,19 +26,21 @@ export class ProductsAddComponent implements OnInit {
   ngOnInit() {
 
   }
-  label= '';
-
+  /**
+   * Sends the product with the information from the Formgroup to the user service.
+   * Then sends the user back to the product page.
+   */
   addProduct() {
     const product = this.productForm.value;
     this.productService.addProduct(product)
       .subscribe(product => {
-        this.router.navigateByUrl("/product");
+        this.router.navigateByUrl('/admin-products');
       });
   }
   submitLabel() {
   this.label = 'Submittet!';
   }
   resetLabel() {
-    this.label = 'Reset!'
+    this.label = 'Reset!';
   }
 }

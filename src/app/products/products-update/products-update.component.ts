@@ -31,6 +31,10 @@ export class ProductsUpdateComponent implements OnInit {
               private categoryService: CategoryService,
               private router: Router) { }
 
+  /**
+   * On initializing the component, the method sends the ID from the URL
+   * and then returns the products' information which then gets filled in the productform.
+   */
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProductById(this.id)
@@ -48,6 +52,11 @@ export class ProductsUpdateComponent implements OnInit {
 
   }
 
+  /**
+   * Updates the product with the given information from the product form.
+   * And then sends the information the the service with the given Id.
+   * Then it navigates back to the admin-product page.
+   */
   updateProduct() {
     const prod = this.productForm.value;
     prod.id = this.id;
@@ -56,6 +65,11 @@ export class ProductsUpdateComponent implements OnInit {
         this.router.navigateByUrl("/admin-products")
       });
   }
+
+  /**
+   * Sends the Id of the object to the service.
+   * to call on the delete product method.
+   */
   delete() {
     this.productService.deleteProduct(this.id)
       .subscribe(message => {
