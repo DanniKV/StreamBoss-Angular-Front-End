@@ -3,6 +3,8 @@ import {Product} from '../../shared/models/products';
 import {ProductService} from '../../shared/services/product.service';
 import {Router} from '@angular/router';
 import {CategoryService} from '../../shared/services/category.service';
+import {OrderByPipe} from '../../shared/order-by.pipe';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-products-list',
@@ -12,15 +14,17 @@ import {CategoryService} from '../../shared/services/category.service';
 export class ProductsListComponent implements OnInit {
   products: Product[];
   categoryTitle: string;
-
-
-
+  sortBy: string;
+  sortForm = new FormGroup({
+    sortName: new FormControl(''),
+  });
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
               private router: Router) { }
 
   ngOnInit() {
-  this.refresh();
+    this.sortBy = 'retailPrice';
+    this.refresh();
   }
 
   refresh() {
@@ -38,5 +42,10 @@ export class ProductsListComponent implements OnInit {
         this.products = catProducts;
       });
   }
+  sort() {
+    this.sortBy = this.sortForm.value;
+  }
+
+
 
 }
