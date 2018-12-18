@@ -2,7 +2,7 @@
 
   <div class="container">
     <div class="jumbotron">
-      <p>Opdater produkt:</p>
+      <p><b>Opdater/slet</b> produkt:</p>
 
       <!-- Label Name -->
       <div class="form-group row">
@@ -12,7 +12,6 @@
         </div>
       </div>
 
-      <!-- Category  Options: VIRKER IKKE ENDNU!-->
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Type:</label>
         <div class="col-sm-10">
@@ -53,14 +52,15 @@
         </div>
       </div>
 
-      <!-- Check Box VAT: VIRKER IKKE ENDNU! -->
+
+      <!-- Check Box VAT: VIRKER IKKE ENDNU!
       <div class="form-group row">
         <label for="productVAT" class="col-sm-2 col-form-label">Inkl. 25% moms</label>
         <div class="col-sm-10">
           <input type="checkbox" id="productVAT" value="productVAT">
         </div>
       </div>
-
+-->
 
       <!-- Label WholeSalePrice -->
       <div class="form-group row">
@@ -75,6 +75,14 @@
         <label  class="col-sm-2 col-form-label">Stock:</label>
         <div class="col-sm-10">
           <input class="form-control" type="number" formControlName="stock" placeholder="{{product.stock}}">
+        </div>
+      </div>
+
+      <!-- Label PicUrl -->
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">PicUrl:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="string" formControlName="picUrl" placeholder="URL">
         </div>
       </div>
 
@@ -98,6 +106,7 @@
           <button type="reset" class="btn btn-dark">Reset</button>
         </div>
       </div>
+      <button (click)="delete()" class="btn btn-danger" routerLink="/admin-products">Delete!</button>
     </div>
   </div>
 </form>

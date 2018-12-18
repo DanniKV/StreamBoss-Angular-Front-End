@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../shared/services/product.service';
+import {Product} from '../../shared/models/products';
+import {CategoryService} from '../../shared/services/category.service';
 
 
 @Component({
@@ -10,6 +12,8 @@ import {ProductService} from '../../shared/services/product.service';
   styleUrls: ['../../shared/css/StreamBossCSS.css']
 })
 export class ProductsUpdateComponent implements OnInit {
+  product: Product;
+
   id: any;
   productForm = new FormGroup({
     name: new FormControl(''),
@@ -21,8 +25,10 @@ export class ProductsUpdateComponent implements OnInit {
     picUrl: new FormControl('')
   });
 
+
   constructor(private route: ActivatedRoute,
               private productService: ProductService,
+              private categoryService: CategoryService,
               private router: Router) { }
 
   ngOnInit() {
@@ -39,13 +45,20 @@ export class ProductsUpdateComponent implements OnInit {
           picUrl: prodFromRest.picUrl
         });
       });
+
   }
+
   updateProduct() {
     const prod = this.productForm.value;
     prod.id = this.id;
     this.productService.updateProduct(prod)
       .subscribe(productUpdated => {
+        this.router.navigateByUrl("/admin-products")
       });
   }
-
+  delete() {
+    this.productService.deleteProduct(this.id)
+      .subscribe(message => {
+      });
+  }
 }

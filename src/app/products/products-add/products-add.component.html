@@ -12,7 +12,6 @@
   </div>
   </div>
 
-      <!-- Category  Options: VIRKER IKKE ENDNU!-->
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Type:</label>
         <div class="col-sm-10">
@@ -53,13 +52,14 @@
       </div>
       </div>
 
-      <!-- Check Box VAT: VIRKER IKKE ENDNU! -->
+      <!-- Check Box VAT: VIRKER IKKE ENDNU!
       <div class="form-group row">
         <label for="productVAT" class="col-sm-2 col-form-label">Inkl. 25% moms</label>
         <div class="col-sm-10">
           <input type="checkbox" id="productVAT" value="productVAT">
         </div>
       </div>
+      -->
 
 
       <!-- Label WholeSalePrice -->
@@ -78,6 +78,14 @@
       </div>
       </div>
 
+      <!-- Label PicUrl -->
+      <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">PicUrl:</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="string" formControlName="picUrl" placeholder="URL">
+        </div>
+      </div>
+
       <!--
       BIG ERRORS HAPPENING DUE TO THIS SOMEHOW
       <!- Pic FileChooser ->
@@ -94,8 +102,9 @@
   <br>
   <div class="form-group row" >
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="reset" class="btn btn-dark">Reset</button>
+      <button (click)="submitLabel()" type="submit" class="btn btn-primary">Submit</button>
+      <button (click)="resetLabel()" type="reset" class="btn btn-dark">Reset</button>
+      <p><b>{{label}}</b></p>
     </div>
   </div>
     </div>

@@ -14,6 +14,7 @@ export class ProductsListComponent implements OnInit {
   categoryTitle: string;
 
 
+
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
               private router: Router) { }
@@ -37,4 +38,5 @@ export class ProductsListComponent implements OnInit {
         this.products = catProducts;
       });
   }
+
 }

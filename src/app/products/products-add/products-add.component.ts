@@ -16,17 +16,17 @@ export class ProductsAddComponent implements OnInit {
     wholeSalePrice: new FormControl(''),
     category: new FormControl(''),
     stock: new FormControl(''),
-   // picUrl: new FormControl('')   -GIVES BIG ERROR MESSAGE CAUSE IT DOESNT EXIST IN THE HTML
+    picUrl: new FormControl('')   //-GIVES BIG ERROR MESSAGE CAUSE IT DOESNT EXIST IN THE HTML
   });
 
 
   constructor(private productService: ProductService,
               private router: Router) {
   }
-
   ngOnInit() {
 
   }
+  label= '';
 
   addProduct() {
     const product = this.productForm.value;
@@ -34,5 +34,11 @@ export class ProductsAddComponent implements OnInit {
       .subscribe(product => {
         this.router.navigateByUrl("/product")
       });
+  }
+  submitLabel() {
+  this.label = 'Submittet!';
+  }
+  resetLabel() {
+    this.label = 'Reset!'
   }
 }

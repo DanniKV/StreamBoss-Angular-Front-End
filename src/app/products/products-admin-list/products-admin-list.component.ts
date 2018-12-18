@@ -21,19 +21,11 @@ export class ProductsAdminListComponent implements OnInit {
     this.getAllProducts();
   }
 
-  delete(id: number) {
-    this.productService.deleteProduct(id)
-      .subscribe(message => {
-        this.getAllProducts();
-      });
-  }
-
   getCategory(category: string) {
     this.categoryTitle = category;
     this.categoryService.getCategory(category)
       .subscribe( catProducts => {
         this.products = catProducts;
-
     });
   }
 
