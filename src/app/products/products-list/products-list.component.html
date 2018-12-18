@@ -28,23 +28,19 @@
           <label class="col-sm-10 col-form-label">Sorter efter:</label>
           <div class="col-sm-2">
             <div class="form-group">
-              <form [formGroup]="sortForm" (ngSubmit)="sort()">
-                <label for="sortBy" id="sortLabel">
-                  <select ngModel="OrderBy" name="Orderby" class="form-control" formControlName="sortName" id="sortBy">
-                    <option value="name">Navn</option>
-                    <option value="retailPrice">Pris - Lav -> Høj</option>
-                    <option value="-retailPrice">Pris - Høj -> Lav</option>
-                  </select>
-                  <button type="submit" class="btn btn-primary">Sort</button>
-                </label>
-              </form>
+              <label for="sortByValue" id="sortLabel">
+                <select (change)="sort()" ngModel="OrderBy" name="Orderby" class="form-control" id="sortByValue">
+                  <option value="name">Navn</option>
+                  <option value="retailPrice">Pris - Lav -> Høj</option>
+                  <option value="-retailPrice">Pris - Høj -> Lav</option>
+                </select>
+              </label>
             </div>
           </div>
         </div>
       </div>
 
     </div>
-
 
     <div  class="row text-center">
 

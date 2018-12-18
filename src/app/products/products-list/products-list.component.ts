@@ -13,46 +13,30 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class ProductsListComponent implements OnInit {
   products: Product[];
+  productsSorted: Product[];
   categoryTitle: string;
-  sortBy: string;
-  sortForm = new FormGroup({
-    sortName: new FormControl(''),
-  });
+  sortBy = 'category';
   constructor(private productService: ProductService,
               private categoryService: CategoryService,
               private router: Router) { }
 
   ngOnInit() {
-    this.sortBy = 'retailPrice';
-    this.refresh();
-  }
-  Page = 1;
-  Items = 6;
-
-  next() {
-    this.productService.pageIncrement();
-    this.Page ++;
-    this.router.navigateByUrl("/products"
-      + '?CurrentPage=' + this.Page + '&ItemsPerPage=' + this.Items);
-    this.refresh();
-  }
-  prev() {
-    this.productService.pageDecrement();
-    this.Page --;
-    this.router.navigateByUrl("/products"
-      + '?CurrentPage=' + this.Page + '&ItemsPerPage=' + this.Items);
-  this.refresh();
+    this.getAllProducts();
   }
 
-  refresh() {
+  getAllProducts() {
+    // gets all products.
     this.categoryTitle = 'Alle Produkter';
     this.productService.getProducts()
       .subscribe(listOfProducts => {
         this.products = listOfProducts;
       });
   }
-
+  refresh() {
+    this.products = this.productsSorted;
+  }
   getCategory(category: string) {
+    // gets the selected category of items.
     this.categoryTitle = category;
     this.categoryService.getCategory(category)
       .subscribe( catProducts => {
@@ -60,6 +44,12 @@ export class ProductsListComponent implements OnInit {
       });
   }
   sort() {
-    this.sortBy = this.sortForm.value;
+    // Sorts the list from the current list of products with the given search parameters from the dropbox.
+    this.sortBy = (<HTMLSelectElement>document.getElementById('sortByValue')).value;
+    this.productsSorted = this.products;
+    this.refresh();
   }
+
+
+
 }
