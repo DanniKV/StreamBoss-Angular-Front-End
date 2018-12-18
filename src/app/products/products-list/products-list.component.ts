@@ -26,6 +26,23 @@ export class ProductsListComponent implements OnInit {
     this.sortBy = 'retailPrice';
     this.refresh();
   }
+  Page = 1;
+  Items = 6;
+
+  next() {
+    this.productService.pageIncrement();
+    this.Page ++;
+    this.router.navigateByUrl("/products"
+      + '?CurrentPage=' + this.Page + '&ItemsPerPage=' + this.Items);
+    this.refresh();
+  }
+  prev() {
+    this.productService.pageDecrement();
+    this.Page --;
+    this.router.navigateByUrl("/products"
+      + '?CurrentPage=' + this.Page + '&ItemsPerPage=' + this.Items);
+  this.refresh();
+  }
 
   refresh() {
     this.categoryTitle = 'Alle Produkter';
@@ -45,7 +62,4 @@ export class ProductsListComponent implements OnInit {
   sort() {
     this.sortBy = this.sortForm.value;
   }
-
-
-
 }
