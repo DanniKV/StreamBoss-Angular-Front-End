@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl);
+    return this.http.get<Product[]>(this.apiUrl + '?CurrentPage=1&ItemsPerPage=6');
   }
 
   updateProduct(product: Product): Observable<Product> {
