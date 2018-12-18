@@ -3,7 +3,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active"> <a class="nav-link" routerLink="/">Home</a> </li>
       <li class="nav-item"> <a class="nav-link" routerLink="/products">Produkter</a> </li>
-      <li class="nav-item"> <a class="nav-link" routerLink="/contact">Kontakt</a> </li>
+ <!--     <li class="nav-item"> <a class="nav-link" routerLink="/contact">Kontakt</a> </li> -->
       <li *ngIf="loggedIn" class="nav-item"> <a class="nav-link" onMouseOver="this.style.cursor='pointer'" (click)="logOut()">Logout</a> </li>
 
       <li *ngIf="loggedIn" class="nav-item"> <a class="nav-link" onMouseOver="this.style.cursor='pointer'" (click)="account()">Min Side</a> </li>

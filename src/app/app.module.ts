@@ -23,6 +23,7 @@ import {ProductsAdminListComponent} from './products/products-admin-list/product
 import { FAQComponent } from './faq/faq.component';
 import { KontaktComponent } from './kontakt/kontakt.component';
 import { TradeTermsComponent } from './trade-terms/trade-terms.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -42,15 +43,15 @@ import { TradeTermsComponent } from './trade-terms/trade-terms.component';
     ProductsAdminListComponent,
     FAQComponent,
     KontaktComponent,
-    TradeTermsComponent
-
+    TradeTermsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
   ],
   providers: [AuthenticationService,
   AuthGuard,
