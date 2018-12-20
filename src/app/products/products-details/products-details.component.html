@@ -1,0 +1,25 @@
+
+
+<div *ngIf="product">
+</div>
+
+<div *ngIf="!product">
+  <h2> Product Not Found Or maybe we are loading your product.!</h2>
+</div>
+<button routerLink="/products" class="btn btn-primary" xmlns="http://www.w3.org/1999/html">Back</button>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2><b>{{product.category}}: {{product.name}}</b></h2>
+    <div class="row">
+      <img src="{{product.picUrl}}" width="600" height="300" alt=""/>
+      <div class="col-md-5 pb-1 pb-md-0">
+        <h3><b>{{product.retailPrice}},-</b></h3>
+        <button type="submit" class="btn btn-primary">Læg i indkøbsvognen</button>
+        <h6 style="color: green">på lager: {{product.stock}}</h6>
+      </div>
+    </div>
+    <br>
+    <p> Produkt Information: {{product.description}}</p>
+  </div>
+</div>

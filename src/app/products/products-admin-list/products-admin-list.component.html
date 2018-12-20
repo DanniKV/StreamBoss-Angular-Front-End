@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="jumbotron">
+    <button routerLink="/add" type="button" class="btn btn-primary">Tilføj Produkt</button>
+    <hr>
+    <div class="row">
+
+      <div class="col-xl-2">
+        <h5>Webshop</h5>
+        <div class="list-group">
+          <button (click)="getAllProducts()" class="list-group-item">Alle Produkter</button>
+          <button (click)="getCategory('Webcam')" class="list-group-item">Webcams</button>
+          <button (click)="getCategory('Capturecard')" class="list-group-item">Capturecards</button>
+          <button (click)="getCategory('Mikrofon')" class="list-group-item">Mikrofoner</button>
+          <button (click)="getCategory('Headset')" class="list-group-item">Headsets</button>
+          <button (click)="getCategory('GamerStol')" class="list-group-item">GamerStole</button>
+          <button (click)="getCategory('Greenscreen')" class="list-group-item">Greenscreens</button>
+        </div>
+          <h5>Grafik</h5>
+        <div class="list-group">
+          <button (click)="getCategory('Layout')" class="list-group-item">Layout</button>
+          <button (click)="getCategory('Banner')" class="list-group-item">Banner</button>
+        </div>
+      </div>
+
+      <div class="col-xl-9">
+        <h5> {{this.categoryTitle}}</h5>
+        <ul class="list-group" *ngIf="products">
+          <li class="list-group-item" *ngFor="let product of products">
+            <a routerLink="/update/{{product.id}}">
+              {{product.name}} </a>
+            <h1 *ngIf="!products">Loading...</h1>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

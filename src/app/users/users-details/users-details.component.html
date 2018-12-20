@@ -1,0 +1,44 @@
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Brugernavn</b></div>
+      <div class="col-lg-6">{{user.userName}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Fornavn</b></div>
+      <div class="col-lg-6">{{user.firstName}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Efternavn</b></div>
+      <div class="col-lg-6">{{user.lastName}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Email</b></div>
+      <div class="col-lg-6">{{user.email}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Telefonnummer</b></div>
+      <div class="col-lg-6">{{user.phoneNumber}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Adresse</b></div>
+      <div class="col-lg-6">{{user.address}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>By</b></div>
+      <div class="col-lg-6">{{user.city}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><b>Postnummer</b></div>
+      <div class="col-lg-6">{{user.zipCode}}</div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-lg-6 col-xl-2"><button type="submit" routerLink="/account-edit" class="btn btn-primary">Rediger oplysninger</button></div>
+      <div class="col-lg-6"><button type="button" class="btn btn-danger" (click)="deleteUser()">Slet bruger</button></div>
+    </div>
+    </div>
+</div>
+

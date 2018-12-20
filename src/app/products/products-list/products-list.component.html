@@ -1,0 +1,65 @@
+<h2 class="text-center">{{this.categoryTitle}}</h2>
+<hr>
+<div class="row">
+  <div class="col-xl-2">
+    <h5>Webshop</h5>
+    <div class="list-group">
+      <button (click)="getAllProducts()" class="list-group-item">Alle Produkter</button>
+      <button (click)="getCategory('Webcam')" class="list-group-item">Webcams</button>
+      <button (click)="getCategory('Capturecard')" class="list-group-item">Capturecards</button>
+      <button (click)="getCategory('Mikrofon')" class="list-group-item">Mikrofoner</button>
+      <button (click)="getCategory('Headset')" class="list-group-item">Headsets</button>
+      <button (click)="getCategory('GamerStol')" class="list-group-item">GamerStole</button>
+      <button (click)="getCategory('Greenscreen')" class="list-group-item">Greenscreens</button>
+    </div>
+    <h5>Grafik</h5>
+    <div class="list-group">
+      <button (click)="getCategory('Layout')" class="list-group-item">Layout</button>
+      <button (click)="getCategory('Banner')" class="list-group-item">Banner</button>
+    </div>
+  </div>
+
+  <!-- Sorting -->
+
+  <div  class="container">
+    <div class="jumbotron">
+    <div class="row">
+      <div class="col-xl-12 text-right">
+        <div class="form-group row">
+          <label class="col-sm-10 col-form-label">Sorter efter:</label>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="sortByValue" id="sortLabel">
+                <select (change)="sort()" ngModel="OrderBy" name="Orderby" class="form-control" id="sortByValue">
+                  <option value="name">Navn</option>
+                  <option value="retailPrice">Pris - Lav -> Høj</option>
+                  <option value="-retailPrice">Pris - Høj -> Lav</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div  class="row text-center">
+
+      <!-- orderBy is done for the piping of objects to sort the products-->
+      <div *ngFor="let product of products| orderBy:sortBy" class="col-md-4 pb-1 pb-md-0">
+        <div class="card" routerLink="/details/{{product.id}}" style="mouse: pointer">
+          <img class="card-img-top" src="{{product.picUrl}}" width="400" height="200" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.description.slice(0,150)}}...</p>
+            <p><b>{{product.retailPrice}}.-</b></p>
+            <a href="#" class="btn btn-primary">Vis</a>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
